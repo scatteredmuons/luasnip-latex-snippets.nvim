@@ -53,7 +53,6 @@ local _autosnippets = function(is_math, not_math)
   for _, s in ipairs({
     "wA",
     "bwA",
-    "templates_bwA",
   }) do
     vim.list_extend(
       autosnippets,
@@ -109,7 +108,6 @@ M.setup_markdown = function()
   for _, str in ipairs({
     "wA",
     "bwA",
-    "templates_bwA",
   }) do
     local t = require(("luasnip-latex-snippets.%s"):format(str)).retrieve(not_math)
     vim.list_extend(to_filter, vim.tbl_map(trigger_of_snip, t))

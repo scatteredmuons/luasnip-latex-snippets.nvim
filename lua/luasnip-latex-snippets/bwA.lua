@@ -27,6 +27,14 @@ function M.retrieve(not_math)
 
     parse_snippet({ trig = "beg", name = "begin{} / end{}" }, "\\begin{$1}\n\t$0\n\\end{$1}"),
 
+    s({ trig = ";bx", name = "Boxed equation" },
+      { t({ "\\[ \\boxed{", "\t" }), i(1), t({ "", "}\\]" }) }
+    ),
+
+    s({ trig = ";bn", name = "Boxed numbered equation" },
+      { t({ "\\begin{equation} \\boxed{", "\t" }), i(1), t({ "", "} \\end{equation}" }) }
+    ),
+        
     s({ trig = "bigfun", name = "Big function" }, {
       t({ "\\begin{align*}", "\t" }),
       i(1),

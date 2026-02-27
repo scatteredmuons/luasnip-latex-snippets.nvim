@@ -53,7 +53,7 @@ local _autosnippets = function(is_math, not_math)
   for _, s in ipairs({
     "wA",
     "bwA",
-    "templates_bwA"
+    "templates_bwA",
   }) do
     vim.list_extend(
       autosnippets,

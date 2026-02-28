@@ -20,7 +20,10 @@ function M.retrieve(is_math)
     ),
 
     parse_snippet({ trig = "lim", name = "limit" }, "\\lim_{${1:n} \\to ${2:\\infty}} "),
+
     parse_snippet({ trig = "limsup", name = "limsup" }, "\\limsup_{${1:n} \\to ${2:\\infty}} "),
+
+    parse_snippet({ trig = "binom", name = "binomial" }, "\\binom{${1:n}}{${2:k}}" ),
 
     parse_snippet(
       { trig = "prod", name = "product" },
@@ -28,13 +31,29 @@ function M.retrieve(is_math)
     ),
 
     parse_snippet(
-      { trig = "part", name = "d/dx" },
+      { trig = "part", name = "partial d/dx" },
       "\\frac{\\partial ${1:V}}{\\partial ${2:x}} $0"
     ),
+
     parse_snippet(
-      { trig = "ddx", name = "d/dx" },
-      "\\frac{\\mathrm{d${1:V}}}{\\mathrm{d${2:x}}} $0"
+      { trig = "dadx", name = "da/dx" },
+      "\\frac{\\mathrm{d}}${1:a}{\\mathrm{d}${2:x}} $0"
     ),
+
+    parse_snippet(
+        { trig = "ddx", name = "d/dx"},
+        "\\frac{\\mathrm{d}}{\\mathrm{d}${2:x}} $0"
+    ),
+    
+    parse_snippet(
+        { trig = "Dadx", name = "nth derivative da/dx"},
+        "\\frac{\\mathrm{d}${1:a}^{${2:n}}}{\\mathrm{d}${3:x}^{${4:n}}}"
+    ),
+
+    parse_snippet(
+        { trig = "Ddx", name = "nth derivative d/dx"},
+        "\\frac{\\mathrm{d}^{${1:n}}}{\\mathrm{d}${2:x}^{${3:n}}}"
+    ), 
 
     parse_snippet({ trig = "pmat", name = "pmat" }, "\\begin{pmatrix} $1 \\end{pmatrix} $0"),
 

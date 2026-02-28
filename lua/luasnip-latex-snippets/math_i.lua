@@ -37,7 +37,7 @@ function M.retrieve(is_math)
 
     parse_snippet(
       { trig = "dadx", name = "da/dx" },
-      "\\frac{\\mathrm{d}}${1:a}{\\mathrm{d}${2:x}} $0"
+      "\\frac{\\mathrm{d}${1:a}}{\\mathrm{d}${2:x}} $0"
     ),
 
     parse_snippet(

@@ -47,7 +47,7 @@ function M.retrieve(is_math)
     
     parse_snippet(
         { trig = "Dadx", name = "nth derivative da/dx"},
-        "\\frac{\\mathrm{d}^{${2:n}}${1:a}}{\\mathrm{d}${3:x}^{${4:n}}}"
+        "\\frac{\\mathrm{d}^{${1:n}}${2:a}}{\\mathrm{d}${3:x}^{${4:n}}}"
 
     ),
 

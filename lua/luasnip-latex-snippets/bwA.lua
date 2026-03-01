@@ -57,7 +57,20 @@ return {
     s({ trig = "bn", name = "Boxed numbered equation" },
         { t({ "\\begin{equation} \\boxed{", "\t" }), i(1), t({ "", "} \\end{equation}" }) }
     ),
-        
+    
+    --these require the tcolorbox package
+    s({ trig = "rbox", name = "Red box" },
+        { t({ "\\begin{tcblisting}{colback=red!5!white,colframe=red!75!black}", "\t" }), i(1), t({ "", "\\end{tcblisting" }) }
+    ),
+
+    s({ trig = "gbox", name = "Green box" },
+        { t({ "\\begin{tcblisting}{colback=green!5!white,colframe=green!75!black}", "\t" }), i(1), t({ "", "\\end{tcblisting" }) }
+    ),
+
+    s({ trig = "bbox", name = "Blue box" },
+        { t({ "\\begin{tcblisting}{colback=blue!5!white,colframe=blue!75!black}", "\t" }), i(1), t({ "", "\\end{tcblisting" }) }
+    ),
+
     s({ trig = "bigfun", name = "Big function" }, {
         t({ "\\begin{align*}", "\t" }),
         i(1),

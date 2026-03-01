@@ -60,15 +60,15 @@ return {
     
     --these require the tcolorbox package
     s({ trig = "rbox", name = "Red box" },
-        { t({ "\\begin{tcolorbox}{colback=red!5!white,colframe=red!75!black}", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
+        { t({ "\\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
     ),
 
     s({ trig = "gbox", name = "Green box" },
-        { t({ "\\begin{tcolorbox}{colback=green!5!white,colframe=green!75!black}", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
+        { t({ "\\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black]", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
     ),
 
     s({ trig = "bbox", name = "Blue box" },
-        { t({ "\\begin{tcolorbox}{colback=blue!5!white,colframe=blue!75!black}", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
+        { t({ "\\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
     ),
 
     s({ trig = "bigfun", name = "Big function" }, {

@@ -20,6 +20,13 @@ function M.retrieve(not_math)
     }) --[[@as function]]
 
 return {
+    s({ trig = "equ", name = "Numbered equation" },
+        { t({ "\\begin{equation}", "\t" }), i(1), t({ "", "\\end{equation}" }) }
+    ),
+
+    s({ trig = "rseq", name = "Reset equation counter" },
+        { t({ "\\setcounter{equation}{0}" }) }
+    ),
 
     s({ trig = "enum", name = "Enumerate" },
         { t({ "\\begin{enumerate}", "\t" }), i(1), t({ "", "\\end{enumerate}" }) }
@@ -37,6 +44,10 @@ return {
         { t({ "\\begin{align*}", "\t" }), i(1), t({ "", "\\end{align*}" }) }
     ),
 
+    s({ trig = "nli", name = "Numbered align" },
+        { t({ "\\begin{align}", "\t" }), i(1), t({ "", "\\end{align}" }) }
+    ),
+    
     parse_snippet({ trig = "beg", name = "begin{} / end{}" }, "\\begin{$1}\n\t$0\n\\end{$1}"),
 
     s({ trig = "bx", name = "Boxed equation" },

@@ -96,7 +96,7 @@ function M.retrieve(is_math)
             regTrig = true,
             name = "bold math"
             priority = 100,
-        }
+        },
         f(function(_, snip)
             return string.format("\\mathbf{%s}", snip.captures[1])
         end, {})

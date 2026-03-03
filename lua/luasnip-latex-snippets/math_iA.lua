@@ -94,7 +94,7 @@ function M.retrieve(is_math)
             trig = "(%a+)bf",
             wordTrig = false,
             regTrig = true,
-            name = "bold math"
+            name = "bold math",
             priority = 100,
         },
         f(function(_, snip)

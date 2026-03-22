@@ -102,9 +102,9 @@ function M.retrieve(is_math)
         end, {})
     ),
 
-    parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
-    parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0 "),
-    parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3 "),
+    parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0"),
+    parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0"),
+    parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3"),
     parse_snippet({ trig = "sr", name = "Square ^2" }, "^2"),
 
     parse_snippet({ trig = "EE", name = "exists" }, "\\exists "),
@@ -187,8 +187,8 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "=<", name = "implied by" }, "\\impliedby"),
     parse_snippet({ trig = "<<", name = "<<" }, "\\ll"),
 
-    parse_snippet({ trig = "<=", name = "leq" }, "\\le "),
-    parse_snippet({ trig = ">=", name = "geq" }, "\\ge "),
+    parse_snippet({ trig = "leq", name = "leq" }, "\\leqslant "),
+    parse_snippet({ trig = "geq", name = "geq" }, "\\geqslant "),
     parse_snippet({ trig = "invs", name = "inverse" }, "^{-1}"),
     parse_snippet({ trig = "~~", name = "~" }, "\\sim "),
     parse_snippet({ trig = "conj", name = "conjugate" }, "\\overline{$1}$0"),

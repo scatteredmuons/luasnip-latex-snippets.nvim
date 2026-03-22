@@ -36,12 +36,12 @@ function M.retrieve(is_math)
     ),
 
     parse_snippet(
-        { trig = "dx", name = "dx" },
+        { trig = "dxd", name = "dx" },
         "\\mathrm{d}${1:x} $0"
     ),
     parse_snippet(
-      { trig = "dadx", name = "da/dx" },
-      "\\frac{\\mathrm{d}${1:a}}{\\mathrm{d}${2:x}} $0"
+      { trig = "dydx", name = "dy/dx" },
+      "\\frac{\\mathrm{d}${1:y}}{\\mathrm{d}${2:x}} $0"
     ),
 
     parse_snippet(
@@ -50,7 +50,7 @@ function M.retrieve(is_math)
     ),
     
     parse_snippet(
-        { trig = "Dadx", name = "nth derivative da/dx"},
+        { trig = "Dydx", name = "nth derivative da/dx"},
         "\\frac{\\mathrm{d}^{${1:n}}${2:a}}{\\mathrm{d}${3:x}^{${4:n}}} $0"
 
     ),

@@ -32,6 +32,18 @@ return {
         { t({ "\\begin{enumerate}", "\t" }), i(1), t({ "", "\\end{enumerate}" }) }
     ),
 
+    s({ trig = "prop", name = "Proposition (no number)" },
+        { t({ "\\begin{prop*}", "\t" }), i(1), t({ "", "\\end{prop*}" }) }
+    ),
+
+    s({ trig = "pron", name = "Numbered proposition" },
+        { t({ "\\begin{prop}", "\t" }), i(1), t({ "", "\\end{prop}" }) }
+    ),
+
+    s({ trig = "proof", name = "Proof" },
+        { t({ "\\begin{proof}", "\t" }), i(1), t({ "", "\\end{proof}" }) }
+    ),
+
     s({ trig = "itemize", name = "Itemize" },
         { t({ "\\begin{itemize}", "\t" }), i(1), t({ "", "\\end{itemize}" }) }
     ),

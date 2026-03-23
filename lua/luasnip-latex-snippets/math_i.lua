@@ -62,7 +62,7 @@ function M.retrieve(is_math)
 
     parse_snippet(
         { trig = "rm", name = "mathrm"},
-        "\\mathrm{${1}} $0"
+        "\\mathrm{${1}}$0"
     ),
 
     parse_snippet({ trig = "pmat", name = "pmat" }, "\\begin{pmatrix} $1 \\end{pmatrix} $0"),

@@ -193,7 +193,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "~~", name = "~" }, "\\sim "),
     parse_snippet({ trig = "conj", name = "conjugate" }, "\\overline{$1}$0"),
 
-    parse_snippet({ trig = "qty", name "qty" }, "\\qty{$1}{$2}$0"),
+    parse_snippet({ trig = "qty", name = "qty" }, "\\qty{$1}{$2}$0"),
   }
 end
 

@@ -18,7 +18,6 @@ return {
 
     parse_snippet({ trig = "txbf", name = "Bold text" }, "\\textbf{${1:${TM_SELECTED_TEXT}}}$0"), 
 
-    parse_snippet({ trig = "sltn", name = "Solution:" }, "\\textbf{Solution:} "),
 }
 end
 

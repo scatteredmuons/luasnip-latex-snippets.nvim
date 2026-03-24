@@ -36,6 +36,10 @@ return {
         { t({ "\\begin{prop*}", "\t" }), i(1), t({ "", "\\end{prop*}" }) }
     ),
 
+    s({ trig = "examp", name = "Example" },
+        { t({ "\\begin{example}", "\t" }), i(1), t({ "", "\\end{example}" }) }
+    ),
+
     s({ trig = "pron", name = "Numbered proposition" },
         { t({ "\\begin{prop}", "\t" }), i(1), t({ "", "\\end{prop}" }) }
     ),

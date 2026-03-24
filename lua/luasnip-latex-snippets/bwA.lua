@@ -33,7 +33,11 @@ return {
     ),
 
     s({ trig = "prop", name = "Proposition (no number)" },
-        { t({ "\\begin{prop*}", "\t" }), i(1), t({ "", "\\end{prop*}" }) }
+        { t({ "\\begin{proposition*}", "\t" }), i(1), t({ "", "\\end{proposition*}" }) }
+    ),
+
+    s({ trig = "pron", name = "Numbered proposition" },
+        { t({ "\\begin{proposition}", "\t" }), i(1), t({ "", "\\end{proposition}" }) }
     ),
 
     s({ trig = "examp", name = "Example" },
@@ -41,11 +45,7 @@ return {
     ),
 
     s({ trig = "sltn", name = "Solution" },
-        { t({ "\\begin{example}", "\t" }), i(1), t({ "", "\\end{example}" }) }
-    ),
-
-    s({ trig = "pron", name = "Numbered proposition" },
-        { t({ "\\begin{prop}", "\t" }), i(1), t({ "", "\\end{prop}" }) }
+        { t({ "\\begin{solution}", "\t" }), i(1), t({ "", "\\end{solution}" }) }
     ),
 
     s({ trig = "proof", name = "Proof" },

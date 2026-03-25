@@ -89,7 +89,7 @@ function M.retrieve(is_math)
     ),
     parse_snippet(
       { trig = "lra", name = "leftangle rightangle" },
-      "\\left< ${1:${TM_SELECTED_TEXT}} \\right>$0"
+      "\\langle ${1:${TM_SELECTED_TEXT}} \\rangle $0"
     ),
 
     parse_snippet(

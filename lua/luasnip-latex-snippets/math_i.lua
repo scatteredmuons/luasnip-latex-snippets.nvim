@@ -48,18 +48,18 @@ function M.retrieve(is_math)
 
     parse_snippet(
         { trig = "ddx", name = "d/dx"},
-        "\\frac{\\mathrm{d}}{\\mathrm{d}${2:x}} $0"
+        "\\frac{\\mathrm{d}}{\\mathrm{d}${1:x}} $0"
     ),
     
     parse_snippet(
         { trig = "Dydx", name = "nth derivative da/dx"},
-        "\\frac{\\mathrm{d}^{${1:n}}${2:a}}{\\mathrm{d}${3:x}^{${4:n}}} $0"
+        "\\frac{\\mathrm{d}^{${1:n}}${2:y}}{\\mathrm{d}${3:x}^{${1:n}}} $0"
 
     ),
 
     parse_snippet(
         { trig = "Ddx", name = "nth derivative d/dx"},
-        "\\frac{\\mathrm{d}^{${1:n}}}{\\mathrm{d}${2:x}^{${3:n}}} $0"
+        "\\frac{\\mathrm{d}^{${1:n}}}{\\mathrm{d}${2:x}^{${1:n}}} $0"
     ), 
 
     parse_snippet(

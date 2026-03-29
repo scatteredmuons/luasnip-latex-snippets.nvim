@@ -20,7 +20,7 @@ function M.retrieve(not_math)
     }) --[[@as function]]
 
 return {
-    s({ trig = "equation", name = "Numbered equation" },
+    s({ trig = "beq", name = "Numbered equation" },
         { t({ "\\begin{equation}", "\t" }), i(1), t({ "", "\\end{equation}" }) }
     ),
 

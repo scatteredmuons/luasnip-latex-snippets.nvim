@@ -21,31 +21,31 @@ function M.retrieve(not_math)
 
 return {
     s({ trig = "sct", name = "Unnumbered section" },
-        { t({ "\\section*{" }), i(1), t({ "}", "\t" }) }
+        { t({ "\\section*{" }), i(1), t({ "}" }) }
     ),
 
     s({ trig = "bct", name = "Unnumbered subsection" },
-        { t({ "\\subsection*{" }), i(1), t({ "}", "\t" }) }
+        { t({ "\\subsection*{" }), i(1), t({ "}" }) }
     ),
 
     s({ trig = "cct", name = "Unnumbered subsubsection" },
-        { t({ "\\subsubsection*{" }), i(1), t({ "}", "\t" }) }
+        { t({ "\\subsubsection*{" }), i(1), t({ "}" }) }
+    ),
+
+    s({ trig = "Sct", name = "Numbered section" },
+        { t({ "\\section{" }), i(1), t({ "}" }) }
+    ),
+
+    s({ trig = "Bct", name = "Numbered subsection" },
+        { t({ "\\subsection*{" }), i(1), t({ "}" }) }
+    ),
+
+    s({ trig = "Cct", name = "Numbered subsubsection" },
+        { t({ "\\subsubsection*{" }), i(1), t({ "}" }) }
     ),
 
     s({ trig = "beq", name = "Numbered equation" },
         { t({ "\\begin{equation}", "\t" }), i(1), t({ "", "\\end{equation}" }) }
-    ),
-
-    s({ trig = "Sct", name = "Numbered section" },
-        { t({ "\\section{" }), i(1), t({ "}", "\t" }) }
-    ),
-
-    s({ trig = "Bct", name = "Numbered subsection" },
-        { t({ "\\subsection*{" }), i(1), t({ "}", "\t" }) }
-    ),
-
-    s({ trig = "Cct", name = "Numbered subsubsection" },
-        { t({ "\\subsubsection*{" }), i(1), t({ "}", "\t" }) }
     ),
 
     s({ trig = "rseq", name = "Reset equation counter" },

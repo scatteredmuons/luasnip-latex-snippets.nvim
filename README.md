@@ -1,6 +1,6 @@
 # luasnip-latex-snippets
 
-A port of [Gilles Castel's](https://github.com/gillescastel/latex-snippets)
+A (personalized) port of [Gilles Castel's](https://github.com/gillescastel/latex-snippets)
 snippets for the [LuaSnip Engine](https://github.com/L3MON4D3/LuaSnip).
 
 ## Why?

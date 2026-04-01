@@ -121,7 +121,7 @@ function M.retrieve(is_math)
 
     parse_snippet({ trig = "notin", name = "not in " }, "\\not\\in "),
 
-    parse_snippet({ trig = "cc", name = "subset" }, "\\subset "),
+    parse_snippet({ trig = "cc", name = "subseteq" }, "\\subseteq "),
 
     parse_snippet({ trig = "<->", name = "leftrightarrow", priority = 200 }, "\\leftrightarrow"),
     parse_snippet({ trig = "...", name = "ldots", priority = 100 }, "\\ldots "),
@@ -183,8 +183,8 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "==", name = "equals" }, [[&= $1 \\\\]]),
     parse_snippet({ trig = "!=", name = "not equals" }, "\\neq "),
     parse_snippet({ trig = "compl", name = "complement" }, "^{c}"),
-    parse_snippet({ trig = "__", name = "subscript" }, "_{\\mathrm{$1}}$0"),
-    parse_snippet({ trig = "=>", name = "implies" }, "\\implies"),
+    parse_snippet({ trig = "__", name = "subscript" }, "_{$1}$0"),
+    parse_snippet({ trig = "impl", name = "implies" }, "\\implies"),
     parse_snippet({ trig = "simp", name = "short implies" }, "\\Rightarrow"),
     parse_snippet({ trig = "=<", name = "implied by" }, "\\impliedby"),
     parse_snippet({ trig = "<<", name = "<<" }, "\\ll"),

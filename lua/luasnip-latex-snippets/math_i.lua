@@ -12,8 +12,6 @@ function M.retrieve(is_math)
   }) --[[@as function]]
 
   return {
-    parse_snippet({ trig = "tx", name = "text" }, "\\text{$1}"),
-
     parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{n=${1:0}}^{${2:\\infty}} ${3:a_n x^n}"),
 
     parse_snippet(

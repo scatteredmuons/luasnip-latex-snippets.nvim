@@ -18,6 +18,8 @@ return {
 
     parse_snippet({ trig = "txbf", name = "Bold text" }, "\\textbf{${1:${TM_SELECTED_TEXT}}}$0"), 
 
+    parse_snippet({ trig = ";done", name = "Finished homework problem marker" }, "% Problem done!! %"),
+
 }
 end
 

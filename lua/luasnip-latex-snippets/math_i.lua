@@ -36,10 +36,6 @@ function M.retrieve(is_math)
     ),
 
     parse_snippet(
-        { trig = "dxd", name = "dx" },
-        "\\text{d}${1:x} $0"
-    ),
-    parse_snippet(
       { trig = "dydx", name = "dy/dx" },
       "\\frac{\\text{d}${1:y}}{\\text{d}${2:x}} $0"
     ),

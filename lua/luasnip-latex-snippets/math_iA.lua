@@ -197,7 +197,7 @@ function M.retrieve(is_math)
 
     parse_snippet({ trig = "qty", name = "qty" }, "\\qty{$1}{$2}$0"),
 
-    parse_snippet({ trig = ";dx", name = "dx" }, "\\text{ d}{${1:x}$0"),
+    parse_snippet({ trig = ";dx", name = "dx" }, "\\text{ d}{${1:x}}$0"),
   }
 end
 

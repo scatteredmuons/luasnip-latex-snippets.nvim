@@ -66,7 +66,7 @@ s({ trig = "asgmt", name = "Assignment template" },
     "\\newcommand{\\courseName}{", }),        i(3), t({ "}", "\t",
     "\\newcommand{\\courseCode}{", }),        i(4), t({ "}", "\t", 
     "\\newcommand{\\courseInstructor}{", }),  i(5), t({ "}", "\t",        
-    "\\newcommand{\\authorName}{", }),        i(6), t({ "}", "\t", "\t" 
+    "\\newcommand{\\authorName}{", }),        i(6), t({ "}", "\t", "\t",
     "\\begin{document}",                                     "\t", "\t",
     "\\maketitle",                                           "\t", "\t",
     "\\newpage",                                             "\t", "\t" 

@@ -70,16 +70,21 @@ s({ trig = "box", name = "Box" },
 { t({ "\\begin{box}", "\t" }), i(1), t({ "", "\\end{box}" }) }
 ),
 
-s({ trig = "def", name = "Definition" },
-{ t({ "\\begin{definition}", "\t" }), i(1), t({ "", "\\end{definition}" }) }
+s({ trig = "examp", name = "Example" },
+{ t({ "\\begin{example}[" }), i(1), t({ "]", "\t" }), i(2), t({ "", "\\end{example}" }) }
 ),
 
-s({ trig = "examp", name = "Example" },
-{ t({ "\\begin{example}", "\t" }), i(1), t({ "", "\\end{example}" }) }
- ),
+s({ trig = "def", name = "Definition" },
+{ t({ "\\begin{definition}[" }), i(1), t({ "]", "\t" }), i(2), t({ "", "\\end{definition}" }) }
+),
 
- s({ trig = "sltn", name = "Solution" },
- { t({ "\\begin{solution}", "\t" }), i(1), t({ "", "\\end{solution}" }) }
+
+s({ trig = "rmrk", name = "Remark" },
+{ t({ "\\begin{remark}[" }), i(1), t({ "]", "\t" }), i(2), t({ "", "\\end{remark}" }) }
+),
+
+s({ trig = "sltn", name = "Solution" },
+{ t({ "\\begin{solution}", "\t" }), i(1), t({ "", "\\end{solution}" }) }
  ),
 
  s({ trig = "proof", name = "Proof" },

@@ -46,7 +46,7 @@ s({ trig = "notes", name = "Notes template" },
     "\\begin{document}", "",
     "\\maketitle",       "",
     "\\newpage", "\t"                    }), i(7), 
-    t({"\\end{document}" }) }
+    t({ "", "\\end{document}" }) }
 ),
 -- homework
 s({ trig = "asgmt", name = "Assignment template" },
@@ -72,7 +72,7 @@ s({ trig = "asgmt", name = "Assignment template" },
     "\\begin{document}", "",
     "\\maketitle",       "",
     "\\newpage", "\t"                     }), i(7), 
-    t({"\\end{document}" }) }
+    t({ "", "\\end{document}" }) }
 ),
     -- unnumbered sections use custom unnumbered section command
     s({ trig = "sct", name = "Unnumbered section" },

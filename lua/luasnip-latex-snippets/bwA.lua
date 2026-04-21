@@ -20,6 +20,58 @@ function M.retrieve(not_math)
   }) --[[@as function]]
 
   return {
+-- templates 
+--
+-- notes
+s({ trig = "notes", name = "Notes template" },
+  { t({ 
+    "\\documentclass[twoside]{article}",                    "\t", "\t",
+    "\\usepackage{adapreamble}",                            "\t",
+    "\\geometry{",                                          "\t",
+    "inner=1.5in,",                                         "\t",
+    "outer=1.5in,",                                         "\t", 
+    "top=1in,",                                             "\t",
+    "bottom=1in,",                                          "\t",
+    "}",                                                    "\t",
+    "\\usepackage{adaenvs}",                                "\t",
+    "\\usepackage{adanotes}",                               "\t",
+    "% Author and class info",                              "\t", "\t",
+    "\\newcommand{\\notesTitle}{", }),       i(1), t({ "}", "\t",
+    "\\newcommand{\\notesDate}{", }),        i(2), t({ "}", "\t",
+    "\\newcommand{\\courseName}{", }),       i(3), t({ "}", "\t",
+    "\\newcommand{\\courseCode}{", }),       i(4), t({ "}", "\t", 
+    "\\newcommand{\\courseInstructor}{", }), i(5), t({ "}", "\t",        
+    "\\newcommand{\\authorName}{", }),       i(6), t({ "}", "\t", "\t",
+    "\\begin{document}",                                    "\t", "\t",
+    "\\maketitle",                                          "\t", "\t",
+    "\\newpage",                                            "\t", "\t"
+  }) }  
+),
+-- homework
+s({ trig = "asgmt", name = "Assignment template" },
+  { t({ 
+    "\\documentclass[twoside]{article}",                     "\t", "\t",
+    "\\usepackage{adapreamble}",                             "\t",
+    "\\geometry{",                                           "\t",
+    "inner=1.75in,",                                         "\t",
+    "outer=1.75in,",                                         "\t", 
+    "top=1in,",                                              "\t",
+    "bottom=1in,",                                           "\t",
+    "}",                                                     "\t",
+    "\\usepackage{adaenvs}",                                 "\t",
+    "\\usepackage{adaassignment}",                           "\t",
+    "% Author and class info",                               "\t", "\t",
+    "\\newcommand{\\assignmentTitle}{", }),   i(1), t({ "}", "\t",
+    "\\newcommand{\\assignmentDueDate}{", }), i(2), t({ "}", "\t",
+    "\\newcommand{\\courseName}{", }),        i(3), t({ "}", "\t",
+    "\\newcommand{\\courseCode}{", }),        i(4), t({ "}", "\t", 
+    "\\newcommand{\\courseInstructor}{", }),  i(5), t({ "}", "\t",        
+    "\\newcommand{\\authorName}{", }),        i(6), t({ "}", "\t", "\t" 
+    "\\begin{document}",                                     "\t", "\t",
+    "\\maketitle",                                           "\t", "\t",
+    "\\newpage",                                             "\t", "\t" 
+  }) }
+),
     -- unnumbered sections use custom unnumbered section command
     s({ trig = "sct", name = "Unnumbered section" },
     { t({ "\\sectionU{" }), i(1), t({ "}" }) }

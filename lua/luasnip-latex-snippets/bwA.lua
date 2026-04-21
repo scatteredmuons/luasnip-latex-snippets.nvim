@@ -73,7 +73,6 @@ s({ trig = "asgmt", name = "Assignment template" },
     "\\maketitle",       "",
     "\\newpage", "\t"                     }), i(7), 
     t({"\\end{document}" }) }
-  }) }
 ),
     -- unnumbered sections use custom unnumbered section command
     s({ trig = "sct", name = "Unnumbered section" },

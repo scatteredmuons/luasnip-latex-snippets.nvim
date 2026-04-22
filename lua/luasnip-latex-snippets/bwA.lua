@@ -45,7 +45,7 @@ s({ trig = "notes", name = "Notes template" },
     "\\newcommand{\\authorName}{",       }), i(6, "Ada"        ), t({ "}", "",
     "\\begin{document}", "",
     "\\maketitle",       "",
-    "\\newpage", "", "\t",               }), i(7), 
+    "\\newpage", "", "",                 }), i(7), 
     t({ "", "", "\\end{document}" }) }
 ),
 -- homework
@@ -71,7 +71,7 @@ s({ trig = "asgmt", name = "Assignment template" },
     "\\newcommand{\\authorName}{",        }), i(6, "Avery Finch"), t({ "}", "",
     "\\begin{document}", "",
     "\\maketitle",       "",
-    "\\newpage", "", "\t",                }), i(7), 
+    "\\newpage", "", "",                  }), i(7), 
     t({ "", "", "\\end{document}" }) }
 ),
     -- unnumbered sections use custom unnumbered section command

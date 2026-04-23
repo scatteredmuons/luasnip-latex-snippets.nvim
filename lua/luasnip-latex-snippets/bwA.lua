@@ -25,6 +25,8 @@ function M.retrieve(not_math)
 -- notes
 s({ trig = "notes", name = "Notes template" },
   { t({ 
+    "% %***%***%***% %***%***%***% %***%***%***% %***%***%***% %***%***%***% %",
+    "% %***%                   begin notes template!                   %***% %", 
     "\\documentclass[twoside]{article}", "",
     "\\usepackage{adapreamble}", 
     "\\usepackage{adaenvs}",     
@@ -37,14 +39,21 @@ s({ trig = "notes", name = "Notes template" },
     "\\newcommand{\\courseCode}{",       }), i(4, "Code"       ), t({ "}",  
     "\\newcommand{\\courseInstructor}{", }), i(5, "Instructor" ), t({ "}",         
     "\\newcommand{\\authorName}{",       }), i(6, "Ada"        ), t({ "}", "",
-    "\\begin{document}", "",
-    "\\maketitle",       "",
-    "\\newpage", "", "",                 }), i(7), 
-    t({ "", "", "\\end{document}" }) }
+    "\\begin{document}",
+    "% %***%***%                it's notes time! :3                %***%***% %", "",
+    "\\maketitle", "",
+    "\\newpage",   "", "",               }), i(7),                t({ "", "",
+    "\\end{document}",
+    "% %***%                    end notes template!                    %***% %",
+    "% %***%                good job with the notes! :D                %***% %",
+    "% %***%***%***% %***%***%***% %***%***%***% %***%***%***% %***%***%***% %",
+  }) }
 ),
 -- homework
 s({ trig = "asgmt", name = "Assignment template" },
   { t({ 
+    "% %***%***%***% %***%***%***% %***%***%***% %***%***%***% %***%***%***% %",
+    "% %***%                begin assignment template!!                %***% %", 
     "\\documentclass[twoside]{article}", "",
     "\\usepackage{adapreamble}",                             
     "\\usepackage{adaenvs}",                                 
@@ -57,10 +66,15 @@ s({ trig = "asgmt", name = "Assignment template" },
     "\\newcommand{\\courseCode}{",        }), i(4, "Code"       ), t({ "}",  
     "\\newcommand{\\courseInstructor}{",  }), i(5, "Instructor" ), t({ "}",         
     "\\newcommand{\\authorName}{",        }), i(6, "Avery Finch"), t({ "}", "",
-    "\\begin{document}", "",
+    "\\begin{document}",
+    "% %***%***%             it's assignment time!! :3             %***%***% %", "",
     "\\maketitle",       "",
-    "\\newpage", "", "",                  }), i(7), 
-    t({ "", "", "\\end{document}" }) }
+    "\\newpage", "", "",                  }), i(7),                t({ "", "",
+    "\\end{document}", 
+    "% %***%                 end assignment template!!                 %***% %",
+    "% %***%             good job with the assignment!! :D             %***% %",
+    "% %***%***%***% %***%***%***% %***%***%***% %***%***%***% %***%***%***% %",
+  }) }
 ),
     -- unnumbered sections use custom unnumbered section command
     s({ trig = "sct", name = "Unnumbered section" },

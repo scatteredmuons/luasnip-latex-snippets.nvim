@@ -183,7 +183,7 @@ s({ trig = "ppb", name = "problem item" },
   t({ "", "" }), i(1), t({ "" }),
   f(function()
     local buf = vim.api.nvim_get_current_buf()
-    counters[buf] = counter[buf]
+    counters[buf] = counters[buf]
     return "% end problem " .. counters[buf] .. " "
   end, {}),
 }

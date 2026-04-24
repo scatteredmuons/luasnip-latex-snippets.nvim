@@ -180,7 +180,7 @@ s({ trig = "ppb", name = "problem item" },
     counters[buf] = (counters[buf] or 0) + 1
     return "\\problem % " .. counters[buf] .. " "
   end, {}),
-  t({ "", "" }), i(1), t({ "" }),
+  t({ "", "\t" }), i(1), t({ "", "" }),
   f(function()
     local buf = vim.api.nvim_get_current_buf()
     counters[buf] = counters[buf]

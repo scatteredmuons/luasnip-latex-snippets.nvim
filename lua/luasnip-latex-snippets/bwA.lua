@@ -186,7 +186,7 @@ s({ trig = "ppb", name = "problem item" },
     counters[buf] = counters[buf]
     return "% end problem " .. counters[buf] .. " "
   end, {}),
-  t({ "" }),
+  t({ "", "" }),
 }
 ),
 

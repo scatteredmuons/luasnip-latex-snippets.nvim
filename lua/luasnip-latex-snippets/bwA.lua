@@ -1,6 +1,15 @@
 local ls = require("luasnip")
 local t = ls.text_node
 local i = ls.insert_node
+local f = ls.function_node
+
+local counters = {}
+
+vim.api.nvim_create_autocmd("BufWipeout", {
+  callback = function(ev)
+    counters[ev.buf] = nil 
+  end, 
+})
 
 local M = {}
 
@@ -20,71 +29,71 @@ function M.retrieve(not_math)
   }) --[[@as function]]
 
   return {
--- templates 
---
--- notes
-s({ trig = "notes", name = "Notes template" },
-  { t({ 
-    "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
-    "% * *** * *** * *** * *** * -> begin notes template! <- * *** * *** * *** * *** * %", 
-    "\\documentclass[twoside]{article}", "",
-    "\\usepackage{adapreamble}", 
-    "\\usepackage{adaenvs}",     
-    "\\usepackage{adaetc}",
-    "\\usepackage{adanotes}", "",
-    "% * *** * *** * *** * * * -> author and class info! :) <- * * * *** * *** * *** * %", "",
-    "\\newcommand{\\notesTitle}{",       }), i(1, "Notes"      ), t({ "}",
-    "\\newcommand{\\notesDate}{",        }), i(2, "\\the\\year"), t({ "}", 
-    "\\newcommand{\\courseName}{",       }), i(3, "Course"     ), t({ "}", 
-    "\\newcommand{\\courseCode}{",       }), i(4, "Code"       ), t({ "}",  
-    "\\newcommand{\\courseInstructor}{", }), i(5, "Instructor" ), t({ "}",         
-    "\\newcommand{\\authorName}{",       }), i(6, "Ada"        ), t({ "}", "",
-    "\\begin{document}",
-    "\\maketitle", "",
-    "\\newpage", "",
-    "% * *** * *** * *** * *** * * -> it's notes time!! <- * * *** * *** * *** * *** * %",
-    "", "",                              }), i(7),                t({ "", "",
-    "\\end{document}",
-    "% * *** * *** * *** * *** * -> end notes template :3 <- * *** * *** * *** * *** * %",
-    "% * *** * *** * *** * * -> rly good job with the notes!! <- * * *** * *** * *** * %",
-    "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
- }) }
-),
--- homework
-s({ trig = "asgmt", name = "Assignment template" },
+    -- templates 
+    --
+    -- notes
+    s({ trig = "notes", name = "Notes template" },
+    { t({ 
+      "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
+      "% * *** * *** * *** * *** * -> begin notes template! <- * *** * *** * *** * *** * %", 
+      "\\documentclass[twoside]{article}", "",
+      "\\usepackage{adapreamble}", 
+      "\\usepackage{adaenvs}", 
+      "\\usepackage{adaetc}",
+      "\\usepackage{adanotes}", "",
+      "% * *** * *** * *** * * * -> author and class info! :) <- * * * *** * *** * *** * %", "",
+      "\\newcommand{\\notesTitle}{", }), i(1, "Notes" ), t({ "}",
+      "\\newcommand{\\notesDate}{", }), i(2, "\\the\\year"), t({ "}", 
+      "\\newcommand{\\courseName}{", }), i(3, "Course" ), t({ "}", 
+      "\\newcommand{\\courseCode}{", }), i(4, "Code" ), t({ "}", 
+      "\\newcommand{\\courseInstructor}{", }), i(5, "Instructor" ), t({ "}", 
+      "\\newcommand{\\authorName}{", }), i(6, "Ada" ), t({ "}", "",
+      "\\begin{document}",
+      "\\maketitle", "",
+      "\\newpage", "",
+      "% * *** * *** * *** * *** * * -> it's notes time!! <- * * *** * *** * *** * *** * %",
+      "", "", }), i(7), t({ "", "",
+      "\\end{document}",
+      "% * *** * *** * *** * *** * -> end notes template :3 <- * *** * *** * *** * *** * %",
+      "% * *** * *** * *** * * -> rly good job with the notes!! <- * * *** * *** * *** * %",
+      "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
+    }) }
+  ),
+  -- homework
+  s({ trig = "asgmt", name = "Assignment template" },
   { t({ 
     "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
     "% * *** * *** * *** * * -> begin assignment template! :D <- * * *** * *** * *** * %", 
     "\\documentclass[twoside]{article}", "",
-    "\\usepackage{adapreamble}",                             
-    "\\usepackage{adaenvs}",                                 
+    "\\usepackage{adapreamble}", 
+    "\\usepackage{adaenvs}", 
     "\\usepackage{adaetc}",
-    "\\usepackage{adaassignment}", "",                           
+    "\\usepackage{adaassignment}", "", 
     "% * *** * *** * *** * * * -> author and class info! :) <- * * * *** * *** * *** * %", "",
-    "\\newcommand{\\assignmentTitle}{",   }), i(1, "Assignment" ), t({ "}", 
-    "\\newcommand{\\dueDate}{", }), i(2, "Due date"   ), t({ "}", 
-    "\\newcommand{\\courseName}{",        }), i(3, "Course"     ), t({ "}", 
-    "\\newcommand{\\courseCode}{",        }), i(4, "Code"       ), t({ "}",  
-    "\\newcommand{\\courseInstructor}{",  }), i(5, "Instructor" ), t({ "}",         
-    "\\newcommand{\\authorName}{",        }), i(6, "Avery Finch"), t({ "}", "",
+    "\\newcommand{\\assignmentTitle}{", }), i(1, "Assignment" ), t({ "}", 
+    "\\newcommand{\\dueDate}{", }), i(2, "Due date" ), t({ "}", 
+    "\\newcommand{\\courseName}{", }), i(3, "Course" ), t({ "}", 
+    "\\newcommand{\\courseCode}{", }), i(4, "Code" ), t({ "}", 
+    "\\newcommand{\\courseInstructor}{", }), i(5, "Instructor" ), t({ "}", 
+    "\\newcommand{\\authorName}{", }), i(6, "Avery Finch"), t({ "}", "",
     "\\begin{document}",
-    "\\maketitle",       "",
+    "\\maketitle", "",
     "\\newpage", "",
     "% * *** * *** * *** * * * -> it's assignment time!! :3 <- * * * *** * *** * *** * %",
-    "", "",                               }), i(7),                t({ "", "",
+    "", "", }), i(7), t({ "", "",
     "\\end{document}", 
     "% * *** * *** * *** * * * -> end assignment template!! <- * * * *** * *** * *** * %",
     "% * *** * *** * *** * -> good job with your assignment! :D <- * *** * *** * *** * %",
     "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
- }) }
+  }) }
 ),
-    -- unnumbered sections use custom unnumbered section command
-    s({ trig = "sct", name = "Unnumbered section" },
-    { t({ "\\sectionU{" }), i(1), t({ "}" }) }
-  ),
+-- unnumbered sections use custom unnumbered section command
+s({ trig = "sct", name = "Unnumbered section" },
+{ t({ "\\sectionU{" }), i(1), t({ "}" }) }
+ ),
 
-  s({ trig = "bct", name = "Unnumbered subsection" },
-  { t({ "\\subsectionU{" }), i(1), t({ "}" }) }
+ s({ trig = "bct", name = "Unnumbered subsection" },
+ { t({ "\\subsectionU{" }), i(1), t({ "}" }) }
 ),
 
 s({ trig = "cct", name = "Unnumbered subsubsection" },
@@ -136,6 +145,9 @@ s({ trig = "def", name = "Definition" },
 { t({ "\\begin{definition}[" }), i(1), t({ "]", "\t" }), i(2), t({ "", "\\end{definition}" }) }
 ),
 
+s({ trig = "desc", name = "Description" },
+{ t({ "\\begin{description}", "\t" }), i(1), t({ "", "\\end{description}" }) }
+),
 
 s({ trig = "rmrk", name = "Remark" },
 { t({ "\\begin{remark}[" }), i(1), t({ "]", "\t" }), i(2), t({ "", "\\end{remark}" }) }
@@ -143,49 +155,64 @@ s({ trig = "rmrk", name = "Remark" },
 
 s({ trig = "sltn", name = "Solution" },
 { t({ "\\begin{solution}", "\t" }), i(1), t({ "", "\\end{solution}" }) }
- ),
+),
 
- s({ trig = "proof", name = "Proof" },
- { t({ "\\begin{proof}", "\t" }), i(1), t({ "", "\\end{proof}" }) }
+s({ trig = "proof", name = "Proof" },
+{ t({ "\\begin{proof}", "\t" }), i(1), t({ "", "\\end{proof}" }) }
 ),
 
 s({ trig = "itemize", name = "Itemize" },
 { t({ "\\begin{itemize}", "\t" }), i(1), t({ "", "\\end{itemize}" }) }
- ),
+),
 
- s({ trig = "iit", name = "item" },
- { t({ "\\item" }), i(1) }
- ),
+s({ trig = "probb", name = "Problems" },
+{ t({ "\\begin{problems}", "\t" }), i(1), t({ "", "\\end{problems}" }) }
+),
 
- s({ trig = "ali", name = "Align" },
- { t({ "\\begin{align*}", "\t" }), i(1), t({ "", "\\end{align*}" }) }
+s({ trig = "iit", name = "item" },
+{ t({ "\\item" }), i(1) }
+),
+
+s({ trig = "ppb", name = "problem item" },
+{
+  f(function()
+    local buf = vim.api.nvim_get_current_buf()
+    counters[buf] = (counters[buf] or 0) + 1
+    return "\\problem %" .. counters[buf] .. " "
+  end, {}),
+  i(1),
+}
+),
+
+s({ trig = "ali", name = "Align" },
+{ t({ "\\begin{align*}", "\t" }), i(1), t({ "", "\\end{align*}" }) }
 ),
 
 s({ trig = "nli", name = "Numbered align" },
 { t({ "\\begin{align}", "\t" }), i(1), t({ "", "\\end{align}" }) }
- ),
+),
 
- parse_snippet({ trig = "beg", name = "begin{} / end{}" }, "\\begin{$1}\n\t$0\n\\end{$1}"),
+parse_snippet({ trig = "beg", name = "begin{} / end{}" }, "\\begin{$1}\n\t$0\n\\end{$1}"),
 
- s({ trig = "bx", name = "Boxed equation" },
- { t({ "\\[ \\boxed{", "\t" }), i(1), t({ "", "}\\]" }) }
- ),
+s({ trig = "bx", name = "Boxed equation" },
+{ t({ "\\[ \\boxed{", "\t" }), i(1), t({ "", "}\\]" }) }
+),
 
- s({ trig = "bn", name = "Boxed numbered equation" },
- { t({ "\\begin{equation} \\boxed{", "\t" }), i(1), t({ "", "} \\end{equation}" }) }
+s({ trig = "bn", name = "Boxed numbered equation" },
+{ t({ "\\begin{equation} \\boxed{", "\t" }), i(1), t({ "", "} \\end{equation}" }) }
 ),
 
 --these require the tcolorbox package
 s({ trig = "rbox", name = "Red box" },
 { t({ "\\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
- ),
+),
 
- s({ trig = "gbox", name = "Green box" },
- { t({ "\\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black]", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
- ),
+s({ trig = "gbox", name = "Green box" },
+{ t({ "\\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black]", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
+),
 
- s({ trig = "bbox", name = "Blue box" },
- { t({ "\\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
+s({ trig = "bbox", name = "Blue box" },
+{ t({ "\\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]", "\t" }), i(1), t({ "", "\\end{tcolorbox}" }) }
 ),
 
 s({ trig = "bigfun", name = "Big function" }, {

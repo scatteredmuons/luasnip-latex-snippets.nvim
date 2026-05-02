@@ -1,15 +1,6 @@
 local ls = require("luasnip")
 local t = ls.text_node
 local i = ls.insert_node
-local f = ls.function_node
-
-local counters = {}
-
-vim.api.nvim_create_autocmd("BufWipeout", {
-  callback = function(ev)
-    counters[ev.buf] = nil 
-  end, 
-})
 
 local M = {}
 
@@ -34,6 +25,7 @@ function M.retrieve(not_math)
     -- notes
     s({ trig = "notes", name = "Notes template" },
     { t({ 
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% notes template v1.0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
       "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
       "% * *** * *** * *** * *** * -> begin notes template! <- * *** * *** * *** * *** * %", 
       "\\documentclass[twoside]{article}", "",
@@ -57,11 +49,13 @@ function M.retrieve(not_math)
       "% * *** * *** * *** * *** * -> end notes template :3 <- * *** * *** * *** * *** * %",
       "% * *** * *** * *** * * -> rly good job with the notes!! <- * * *** * *** * *** * %",
       "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
-    }) }
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% notes template v1.0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+   }) }
   ),
   -- homework
-  s({ trig = "asgmt", name = "Assignment template" },
+  s({ trig = "assignment", name = "Assignment template" },
   { t({ 
+    "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% assigment template v1.0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
     "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
     "% * *** * *** * *** * * -> begin assignment template! :D <- * * *** * *** * *** * %", 
     "\\documentclass[twoside]{article}", "",
@@ -85,7 +79,8 @@ function M.retrieve(not_math)
     "% * *** * *** * *** * * * -> end assignment template!! <- * * * *** * *** * *** * %",
     "% * *** * *** * *** * -> good job with your assignment! :D <- * *** * *** * *** * %",
     "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
-  }) }
+    "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% assigment template v1.0 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+ }) }
 ),
 -- unnumbered sections use custom unnumbered section command
 s({ trig = "sct", name = "Unnumbered section" },
@@ -174,20 +169,7 @@ s({ trig = "iit", name = "item" },
 ),
 
 s({ trig = "ppb", name = "problem item" },
-{
-  f(function()
-    local buf = vim.api.nvim_get_current_buf()
-    counters[buf] = (counters[buf] or 0) + 1
-    return "\\problem % " .. counters[buf] .. " "
-  end, {}),
-  t({ "", "\t" }), i(1), t({ "", "" }),
-  f(function()
-    local buf = vim.api.nvim_get_current_buf()
-    counters[buf] = counters[buf]
-    return "% end problem " .. counters[buf] .. " "
-  end, {}),
-  t({ "", "" }),
-}
+{ t({ "\\problem", "\t" }), i(1) }
 ),
 
 s({ trig = "ali", name = "Align" },

@@ -199,7 +199,13 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "unit", name = "unit" }, "\\unit{$1}$0"),
 
     -- requires "\newcommand{\dd}{\mathrm{d}}" or similar
-    parse_snippet({ trig = ";d", name = "derivative" }, "\\dd{$1}$0"),
+    parse_snippet({ trig = ";de", name = "derivative dx" }, "\\de{$1}$0"),
+    -- requires "\newcommand{\dd}{\frac{\mathrm{d}{#1}}{\mathrm{d}{#2}}" or similar 
+    parse_snippet({ trig = ";dd", name = "derivative d/dx" }, "\\dd[$1]{$2}$0"),
+
+    parse_snippet({ trig = ";pd", name = "partial derivative" }, "\\pd[$1]{$2}$0"),
+
+
   }
 end
 

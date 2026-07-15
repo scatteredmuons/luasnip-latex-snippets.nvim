@@ -83,27 +83,27 @@ function M.retrieve(not_math)
  }) }
 ),
 -- unnumbered sections use custom unnumbered section command
-s({ trig = "sct", name = "Unnumbered section" },
+s({ trig = "Sct", name = "Unnumbered section" },
 { t({ "\\sectionU{" }), i(1), t({ "}" }) }
  ),
 
- s({ trig = "bct", name = "Unnumbered subsection" },
+ s({ trig = "Bct", name = "Unnumbered subsection" },
  { t({ "\\subsectionU{" }), i(1), t({ "}" }) }
 ),
 
-s({ trig = "cct", name = "Unnumbered subsubsection" },
+s({ trig = "Cct", name = "Unnumbered subsubsection" },
 { t({ "\\subsubsectionU{" }), i(1), t({ "}" }) }
  ),
 
- s({ trig = "Sct", name = "Numbered section" },
+ s({ trig = "sct", name = "Numbered section" },
  { t({ "\\section{" }), i(1), t({ "}" }) }
  ),
 
- s({ trig = "Bct", name = "Numbered subsection" },
+ s({ trig = "bct", name = "Numbered subsection" },
  { t({ "\\subsection{" }), i(1), t({ "}" }) }
 ),
 
-s({ trig = "Cct", name = "Numbered subsubsection" },
+s({ trig = "cct", name = "Numbered subsubsection" },
 { t({ "\\subsubsection{" }), i(1), t({ "}" }) }
  ),
 

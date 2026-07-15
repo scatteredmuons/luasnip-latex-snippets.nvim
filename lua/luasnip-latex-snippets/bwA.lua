@@ -25,7 +25,7 @@ function M.retrieve(not_math)
     -- notes
   s({ trig = "notes", name = "Notes template" },
   { t({ 
-    "%%%%%%%%%%%%%%%%%%%%%%%%%%%| ada's notes template v1.0 |%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+    "%%%%%%%%%%%%%%%%%%%%%%%%%%%| ada's notes template v1.5 |%%%%%%%%%%%%%%%%%%%%%%%%%%%",
     "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
     "% * *** * *** * *** * *** * -> begin notes template! <- * *** * *** * *** * *** * %", 
     "\\documentclass[twoside]{article}", "",
@@ -33,13 +33,13 @@ function M.retrieve(not_math)
     "\\usepackage{adaenvs}", 
     "\\usepackage{adaetc}",
     "\\usepackage{adanotes}", "",
-    "% * *** * *** * *** * * * -> author and class info! :) <- * * * *** * *** * *** * %", "",
+    "% * *** * *** * *** * * * -> author and subject info!! <- * * * *** * *** * *** * %", "",
     "\\newcommand{\\notesTitle}{", }), i(1, "Notes" ), t({ "}",
     "\\newcommand{\\notesDate}{", }), i(2, "\\the\\year"), t({ "}", 
-    "\\newcommand{\\courseName}{", }), i(3, "Course" ), t({ "}", 
-    "\\newcommand{\\courseCode}{", }), i(4, "Code" ), t({ "}", 
-    "\\newcommand{\\courseInstructor}{", }), i(5, "Instructor" ), t({ "}", 
-    "\\newcommand{\\authorName}{", }), i(6, "Ada" ), t({ "}", "",
+    "\\newcommand{\\notesSubject}{", }), i(3, "Course" ), t({ "}", 
+    "\\newcommand{\\noteCode}{", }), i(4, "Code" ), t({ "}", 
+    "\\newcommand{\\notesLecturer}{", }), i(5, "Instructor" ), t({ "}", 
+    "\\newcommand{\\authorName}{", }), i(6, "Avery" ), t({ "}", "",
     "\\begin{document}",
     "\\maketitle", "",
     "\\newpage", "",
@@ -49,7 +49,7 @@ function M.retrieve(not_math)
     "% * *** * *** * *** * *** * -> end notes template :3 <- * *** * *** * *** * *** * %",
     "% * *** * *** * *** * * -> rly good job with the notes!! <- * * *** * *** * *** * %",
     "% * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * *** * %", 
-    "%%%%%%%%%%%%%%%%%%%%%%%%%%%| ada's notes template v1.0 |%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+    "%%%%%%%%%%%%%%%%%%%%%%%%%%%| ada's notes template v1.5 |%%%%%%%%%%%%%%%%%%%%%%%%%%%",
  }) }
 ),
   -- homework

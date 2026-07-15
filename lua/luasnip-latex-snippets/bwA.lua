@@ -37,7 +37,7 @@ function M.retrieve(not_math)
     "\\newcommand{\\notesTitle}{", }), i(1, "Notes" ), t({ "}",
     "\\newcommand{\\notesDate}{", }), i(2, "\\the\\year"), t({ "}", 
     "\\newcommand{\\notesSubject}{", }), i(3, "Subject" ), t({ "}", 
-    "\\newcommand{\\noteCode}{", }), i(4, "Code" ), t({ "}", 
+    "\\newcommand{\\notesCode}{", }), i(4, "Code" ), t({ "}", 
     "\\newcommand{\\notesLecturer}{", }), i(5, "Lecturer" ), t({ "}", 
     "\\newcommand{\\authorName}{", }), i(6, "Avery" ), t({ "}", "",
     "\\begin{document}",
